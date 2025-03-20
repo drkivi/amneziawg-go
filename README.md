@@ -50,3 +50,6 @@ $ git clone https://github.com/amnezia-vpn/amneziawg-go
 $ cd amneziawg-go
 $ make
 ```
+## Go Modules Update
+
+Required Go modules updated to latest version (dated at: 2025/03/20) - Go version -> 1.24.1
