@@ -52,4 +52,4 @@ $ make
 ```
 ## Go Modules Update
 
-Required Go modules updated to latest version (dated at: 2025/05/09) - Go version -> 1.24.3
+Required Go modules updated to latest version (dated at: 2025/07/14) - Go version -> 1.24.5
