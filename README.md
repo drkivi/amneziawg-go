@@ -50,4 +50,7 @@ $ git clone https://github.com/amnezia-vpn/amneziawg-go
 $ cd amneziawg-go
 $ make
 ```
- 
+
+## Submodule Changes
+
+Required Go modules updated to latest version (dated at: 2025/10/03) - Go version -> 1.25.1 - AWGTOOLS_RELEASE -> 1.0.20250903
