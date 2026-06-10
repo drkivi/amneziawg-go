@@ -111,3 +111,8 @@ Value is a sequence of tags specified below:
 
 > [!IMPORTANT]
 > If the final size of any packet exceeds system MTU, it would be fractured into fragments, which looks suspicious
+
+## Submodule Changes
+
+Required Go modules updated to latest version (dated at: 2026/06/09) - Go version -> 1.26.4 - AWGTOOLS_RELEASE -> 1.0.20260223
+
