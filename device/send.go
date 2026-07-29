@@ -310,6 +310,27 @@ func (device *Device) RoutineReadFromTUN() {
 	}()
 
 	for {
+		// Wait for at least one completed IpcSetOperation before computing the
+		// padding-dependent read offset. RoutineReadFromTUN is started from
+		// NewDevice, i.e. before any configuration is set, and device.isUp()
+		// is not a reliable signal here: tun.Device can report EventUp (which
+		// RoutineTUNEventReader turns into an automatic Up()) independently of
+		// -- and racing with -- the caller's IpcSetOperation call. Trusting
+		// device.paddings.transport before configuration has ever completed
+		// can capture a stale/default padding value that then sticks for
+		// however long the subsequent blocking Read call takes to return the
+		// first packet.
+		for !device.configured.Load() || !device.isUp() {
+			if device.isClosed() {
+				return
+			}
+			// device.closed is only closed at the very end of Close(), after
+			// it has waited for this routine to stop -- it is not a usable
+			// early-exit signal here. device.isClosed() flips to true as soon
+			// as Close() begins, well before that wait, so poll it instead.
+			time.Sleep(time.Millisecond)
+		}
+
 		padding := device.paddings.transport.Load()
 		offset := MessageTransportHeaderSize + int(padding)
 

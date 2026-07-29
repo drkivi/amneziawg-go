@@ -90,6 +90,13 @@ type Device struct {
 	closed   chan struct{}
 	log      *Logger
 
+	// configured reports whether IpcSetOperation has completed at least once.
+	// RoutineReadFromTUN must wait for this before trusting device.paddings.*
+	// for the read offset: Up() can be triggered automatically (and racily,
+	// before any configuration) as soon as the underlying tun.Device reports
+	// EventUp, which happens independently of IpcSetOperation.
+	configured atomic.Bool
+
 	junk struct {
 		min   atomic.Uint32
 		max   atomic.Uint32

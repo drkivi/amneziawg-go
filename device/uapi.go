@@ -242,6 +242,7 @@ func (device *Device) IpcSetOperation(r io.Reader) (err error) {
 				return ipcErrorf(ipc.IpcErrorInvalid, "failed to merge with device: %w", err)
 			}
 			peer.handlePostConfig()
+			device.configured.Store(true)
 			return nil
 		}
 		key, value, ok := strings.Cut(line, "=")
@@ -281,6 +282,7 @@ func (device *Device) IpcSetOperation(r io.Reader) (err error) {
 		return ipcErrorf(ipc.IpcErrorInvalid, "failed to merge with device: %w", err)
 	}
 	peer.handlePostConfig()
+	device.configured.Store(true)
 
 	if err := scanner.Err(); err != nil {
 		return ipcErrorf(ipc.IpcErrorIO, "failed to read input: %w", err)
