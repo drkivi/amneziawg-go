@@ -164,4 +164,4 @@ Value is a sequence of tags specified below:
 
 ## Submodule Changes
 
-Required Go modules updated to latest version (dated at: 2026/07/30) - Go version -> 1.26.5 - AWGTOOLS_RELEASE -> 1.0.20260618-2
+Required Go modules updated to latest version (dated at: 2026/08/17) - Go version -> 1.26.6 (fixes upstream Go security vulnerabilities present in 1.26.5) - AWGTOOLS_RELEASE -> v3.1.20260812
