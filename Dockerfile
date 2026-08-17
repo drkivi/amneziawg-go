@@ -1,4 +1,4 @@
-ARG GOLANG_VERSION=1.26.5
+ARG GOLANG_VERSION=1.26.6
 ARG ALPINE_VERSION=3.24.1
 
 FROM golang:${GOLANG_VERSION} as awg
@@ -8,11 +8,8 @@ RUN go mod download && \
     go mod verify && \
     go build -ldflags '-linkmode external -extldflags "-fno-PIC -static"' -v -o /usr/bin
 
-# No alpine-3.24 zip is published under amneziawg-tools releases (only 3.19/ubuntu-22.04/windows),
-# so build from source instead of a prebuilt zip to avoid a musl ABI mismatch.
-# AWGTOOLS_COMMIT corresponds to release v1.0.20260618-2, the latest as of 2026-07-29.
 FROM alpine:${ALPINE_VERSION} as tools
-ARG AWGTOOLS_COMMIT="61e741780e8465a67a7d7fb6cffe14a8a15d624a"
+ARG AWGTOOLS_COMMIT="ee0f0a9aa34ff0a0da4b3433b9512781cfe02843"
 
 RUN apk add --no-cache git build-base linux-headers && \
     git clone https://github.com/amnezia-vpn/amneziawg-tools.git /amneziawg-tools && \
