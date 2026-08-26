@@ -1,6 +1,6 @@
 module github.com/amnezia-vpn/amneziawg-go
 
-go 1.26.6
+go 1.27.0
 
 require (
 	github.com/goccy/go-yaml v1.19.2
@@ -21,10 +21,9 @@ require (
 	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/onsi/ginkgo/v2 v2.12.0 // indirect
 	github.com/quic-go/qpack v0.5.1 // indirect
-	github.com/quic-go/quic-go v0.48.1 // indirect
+	github.com/quic-go/quic-go v0.52.0 // indirect
 	github.com/shadowsocks/go-shadowsocks2 v0.1.5 // indirect
-	github.com/stretchr/testify v1.11.1 // indirect
-	go.uber.org/mock v0.4.0 // indirect
+	go.uber.org/mock v0.5.0 // indirect
 	golang.org/x/exp v0.0.0-20260813180055-c1d0aacb2297 // indirect
 	golang.org/x/mobile v0.0.0-20260816165457-f98cc9b3c733 // indirect
 	golang.org/x/mod v0.40.0 // indirect
