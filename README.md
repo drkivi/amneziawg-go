@@ -164,4 +164,4 @@ Value is a sequence of tags specified below:
 
 ## Submodule Changes
 
-Required Go modules updated to latest version (dated at: 2026/08/26) - Go version -> 1.27.0 - quic-go bumped 0.48.1 -> 0.52.0 (fixes 2 of 4 known CVEs; the remaining 2 QPACK DoS CVEs require quic-go >= 0.57.0, which removes the `quic.EarlyConnection` API that golang.getoutline.org/sdk/x v0.2.0's httpconnect transport still depends on — blocked on an upstream outline-sdk/x fix) - AWGTOOLS_RELEASE -> v3.1.20260812 (unchanged, still latest)
+Required Go modules updated to latest version (dated at: 2026/09/10) - Go version -> 1.27.1 - golang.getoutline.org/sdk/x -> v0.2.1, golang.org/x/crypto -> v0.57.0, golang.org/x/net -> v0.59.0, golang.org/x/sys -> v0.48.0 - quic-go remains pinned at 0.52.0 (fixes 2 of 4 known CVEs; the remaining 2 QPACK DoS CVEs require quic-go >= 0.57.0, which removes the `quic.EarlyConnection` API that golang.getoutline.org/sdk/x still depends on even at v0.2.1 — blocked on an upstream outline-sdk/x fix) - AWGTOOLS_RELEASE -> v3.1.20260812 (unchanged, still latest)
