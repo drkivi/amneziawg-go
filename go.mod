@@ -1,15 +1,15 @@
 module github.com/amnezia-vpn/amneziawg-go
 
-go 1.27.1
+go 1.27.2
 
 require (
 	github.com/goccy/go-yaml v1.19.2
-	go.uber.org/atomic v1.11.0
+	go.uber.org/atomic v1.12.0
 	golang.getoutline.org/sdk v0.0.23
-	golang.getoutline.org/sdk/x v0.2.1
-	golang.org/x/crypto v0.57.0
-	golang.org/x/net v0.59.0
-	golang.org/x/sys v0.48.0
+	golang.getoutline.org/sdk/x v0.2.2
+	golang.org/x/crypto v0.58.0
+	golang.org/x/net v0.61.0
+	golang.org/x/sys v0.49.0
 	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2
 	gvisor.dev/gvisor v0.0.0-20260604230326-c7dbb92365cd
 )
@@ -27,8 +27,8 @@ require (
 	golang.org/x/exp v0.0.0-20260813180055-c1d0aacb2297 // indirect
 	golang.org/x/mobile v0.0.0-20260816165457-f98cc9b3c733 // indirect
 	golang.org/x/mod v0.41.0 // indirect
-	golang.org/x/sync v0.23.0 // indirect
-	golang.org/x/text v0.42.0 // indirect
+	golang.org/x/sync v0.24.0 // indirect
+	golang.org/x/text v0.43.0 // indirect
 	golang.org/x/time v0.15.0 // indirect
-	golang.org/x/tools v0.49.0 // indirect
+	golang.org/x/tools v0.51.0 // indirect
 )
